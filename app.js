@@ -1,10 +1,10 @@
-var express = require('express');
+const express = require('express');
 
-var http = require('http');
-var path = require('path');
+const http = require('http');
+const path = require('path');
 
-var app = express();
-// app.set('appName','hello-world');
+let app = express();
+app.set('appName','hello-world');
 
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
@@ -21,10 +21,8 @@ http
 	.createServer(app)
 	.listen(
 		app.get('port'),
-		function(){
-		console.log(
-		'Express server listening on port ' +
-		app.get('port'
+		() => {
+		console.log(console.log(`Express.js server is listening on port ${app.get('port')}`
 		)
 	);
 });
